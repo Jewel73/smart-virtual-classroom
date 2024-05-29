@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Box, TextField, Button, Container, CssBaseline, Paper, Grid } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import logo from './logo.png'; // Adjust the path as necessary
 import navbarlogo from './navbarlogo.jpg'; // Adjust the path as necessary
+import { useDispatch } from 'react-redux';
+import { addUser, updateUser } from './redux/slice/UserSlice';
+import UserList from './pages/LoginPage/UserList';
 
 const theme = createTheme();
 
@@ -79,8 +82,19 @@ const useStyles = makeStyles({
   },
 });
 
+
 function LoginPage() {
   const classes = useStyles();
+
+  const dispatch = useDispatch();
+  const [name, setName] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addUser({ name }));
+    setName('');
+  };
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -116,6 +130,8 @@ function LoginPage() {
                 <TextField
                   variant="outlined"
                   margin="normal"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   required
                   fullWidth
                   label="Email Address"
@@ -131,7 +147,7 @@ function LoginPage() {
                   type="password"
                   autoComplete="current-password"
                 />
-                <Button type="submit" fullWidth variant="contained" color="primary">
+                <Button  type="submit" fullWidth variant="contained" color="primary">
                   Login
                 </Button>
                 <Box mt={2}>
@@ -141,6 +157,7 @@ function LoginPage() {
                 </Box>
               </Box>
             </Box>
+            <Box><UserList/></Box>
             </Grid>
           </Grid>
         </Container>
