@@ -2,7 +2,7 @@
 This is a spring boot microservice project 
 
 
-## How To Run the project 
+## How To Run the backend project 
 
  * clone project using : https://github.com/Jewel73/smart-virtual-classroom.git
  * import root folder project into intelij idea
@@ -12,3 +12,9 @@ This is a spring boot microservice project
  * You will find project configs data into config-server
  * First start registry service and then Config-server, and api gateway server
  * after that you can run your all others services
+
+## How To Run the frontend project
+
+ * navigate to the frontend folder
+ * run command : npm install
+ * start the app using command : npm start
