@@ -9,5 +9,6 @@ This is a spring boot microservice project
  * You will see a notification to load as maven, click on that
  * If you don't find it, you need to manually set it
  * Go to every maven project & right click on the pom.xml file and in the below you will se an option add to maven, click on that
- * You will find project configs data into config-server 
-
+ * You will find project configs data into config-server
+ * First start registry service and then Config-server, and api gateway server
+ * after that you can run your all others services
