@@ -4,7 +4,7 @@ This is a spring boot microservice project
 
 ## How To contribute in the backend project 
 
- * Fork the project in your github account and create a new branch
+ * Fork the project in your github account and create a new branch.
  * Clone the project from your account
  * import root folder project into intelij idea
  * You will see a notification to load as maven, click on that
