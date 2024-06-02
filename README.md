@@ -1,6 +1,9 @@
 # smart-virtual-classroom
 This is a spring boot microservice project 
 
+# High Level Design Architecture
+![highlevelarchhitecute.jpg](assets%2FDocuments%2Fhighlevelarchhitecute.jpg)
+
 
 ## How To contribute in the backend project 
 
