@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.teamgreen.classroom.client.EmployeeClient;
 
 @RestController
-@RequestMapping("/department")
+@RequestMapping("/classroom/department")
 public class DepartmentController {
 	
 	
