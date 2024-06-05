@@ -26,12 +26,15 @@ public class UserService {
     private final ModelMapper modelMapper;
 
     public User saveUser(RegisterRequest request) {
+        UserDetails userDetails = new UserDetails(request.getUserDetailsRequest());
         User toSave = User.builder()
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .email(request.getEmail())
                 .role(Role.USER)
-                .active(Active.ACTIVE).build();
+                .active(Active.ACTIVE)
+                .userDetails(userDetails)
+                .build();
         return userRepository.save(toSave);
     }
 
